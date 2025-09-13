@@ -71,7 +71,7 @@ player.setPosition(10,10,10);
 const events = new myEngine.EventsManager(renderer.getCanvas());
 
 const ground = new myEngine.Box(scene, world, {width: 100, height: 1, depth: 100, colliderType:"fixed"});
-await myEngine.Texture.loadTexture('ground', "../textures/ground-2.png");
+await myEngine.Texture.loadTexture('ground', "../MyEngine/textures/ground-2.png");
 
 const groundTexture = myEngine.Texture.getTextureById('ground');
 groundTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -81,7 +81,7 @@ ground.setPosition(0, -0.5, 0);
 
 const sight = new myEngine.Sight(renderer);
 
-await myEngine.Texture.loadTexture('container', "../textures/container-2.png");
+await myEngine.Texture.loadTexture('container', "../MyEngine/textures/container-2.png");
 
 const box1 = new myEngine.Box(scene, world, {width: 1.6, height: 1.6, depth: 1.6});
 box1.setTexture(myEngine.Texture.getTextureById('container'));

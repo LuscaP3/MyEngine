@@ -2,16 +2,16 @@
     "textures": [
         {
             "identifier": "tree1",
-            "path": "../textures/arvore-2.png"
+            "path": "../MyEngine/textures/arvore-2.png"
         },
         
         {
             "identifier": "fence1",
-            "path": "../textures/white-fence.png"
+            "path": "../MyEngine/textures/white-fence.png"
         },
         {
             "identifier": "hills",
-            "path": "../textures/hills.png"
+            "path": "../MyEngine/textures/hills.png"
         }
     ]
 }
