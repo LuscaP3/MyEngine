@@ -5,7 +5,4 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [wasm(), topLevelAwait()],
   base: '/MyEngine/',
-  build: {
-    assetsDir: 'assets'
-  },
 });
