@@ -1,0 +1,40 @@
+html, body {
+   margin: 0;
+   height: 100%;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+#PlayerPos{
+   color : #ffffff;
+   font-size: 25px;
+
+   padding-left: 15px;
+   padding-top: 0px;
+}
+
+#container {
+   position: relative;
+   width: 95vw;
+   height: 85vh;
+}
+
+#scene {
+   width: 100%;
+   height: 100%;
+   
+   border-radius: 20px;
+
+   display: block;
+}
+
+#ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* só necessário se você quiser que o canvas receba clicks */
+}
