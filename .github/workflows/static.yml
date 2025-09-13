@@ -34,9 +34,9 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
       - name: Install dependecies
-        run: npm install
+        run: npm ci
       - name: Build app
-        run: npx run build
+        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
