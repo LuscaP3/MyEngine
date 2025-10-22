@@ -11,11 +11,12 @@ export class Model{
     #vertices = [];
     #indices = [];
 
-    constructor(scene, world, url){
+    constructor(scene, world, path){
         this.#World = world;
-        const rapier = Rapier.getRapier();
+        const rapier = Rapier.get();
 
         const gltfLoader = new GLTFLoader();
+        const url = `${import.meta.env.BASE_URL}` + path;
 
         gltfLoader.load(url, (gltf) => {
           this.#gltfScene = gltf.scene;

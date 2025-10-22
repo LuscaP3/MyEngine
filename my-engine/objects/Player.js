@@ -58,14 +58,14 @@ export class Player{
     isOnGround(){
         const capsulePos = this.#Capsule.getPosition();
 
-        const rapier = Rapier.getRapier();
-        const ray = new rapier.Ray({x: capsulePos.x, y:capsulePos.y - 1, z: capsulePos.z}, {x:0, y:-1, z:0});
+        const rapier = Rapier.get();
+        const ray = new rapier.Ray({x: capsulePos.x, y:capsulePos.y - 0.9, z: capsulePos.z}, {x:0, y:-1, z:0});
 
-        const hit = this.#World.castRay(ray,100, true, 0, 0b1111_1111_1111_1111_0000_0000_0000_0001)
+        const hit = this.#World.castRay(ray,100, true, 0, 0b1111_1111_1111_1111_0000_0000_0000_0001);
 
         if(hit){
             const collider = (hit.collider);
-            if(hit.timeOfImpact === 0){
+            if(hit.timeOfImpact >= 0 && hit.timeOfImpact <= 0.1){
                 return true;
             }
         }

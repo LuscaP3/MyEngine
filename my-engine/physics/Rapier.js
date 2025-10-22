@@ -1,21 +1,17 @@
+import RAPIER from 'https://cdn.skypack.dev/@dimforge/rapier3d-compat';
+
 export class Rapier{
     static #RAPIER = undefined;
-    static WorldStep = 1/60;
 
     constructor(){
 
     }
 
     async init(){
-        if(Rapier.#RAPIER){
-            throw new Error("Classe PhysicsHandlerer já instanciada");
-        }
-        else{
-            Rapier.#RAPIER = await import('@dimforge/rapier3d');
-        }
+        await RAPIER.init();
     }
 
-    static getRapier(){
-        return Rapier.#RAPIER;
+    static get(){
+        return RAPIER;
     }
 }

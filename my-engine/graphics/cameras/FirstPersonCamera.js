@@ -17,7 +17,7 @@ export class FirstPersonCamera extends THREE.PerspectiveCamera{
     sensibility = 0.1;
     renderDistance = 10;
     fov = 75;
-    speed = 0.05;
+    speed = 0.125;
 
     updateOrientation(xOffSet, yOffSet){
         this.#target.increasePhi(yOffSet * this.sensibility);
@@ -48,8 +48,8 @@ export class FirstPersonCamera extends THREE.PerspectiveCamera{
         }
 
         if (keysPressed.has('KeyA') || keysPressed.has('KeyD')) {
-            const targetPosition = this.#target.getVector();
-            const directionXZ = new Vec2(-targetPosition.z, targetPosition.x);
+            const direction = this.#target.getVector();
+            const directionXZ = new Vec2(-direction.z, direction.x);
             directionXZ.normalize();
 
 
@@ -82,7 +82,7 @@ export class FirstPersonCamera extends THREE.PerspectiveCamera{
 
     applyMovement(keysPressed){
         const translation = this.genTranslationVector(keysPressed);
-        translation.multiply(1/50);
+        translation.multiply(this.speed);
         this.translate(translation.x, translation.y, translation.z);
     }
 

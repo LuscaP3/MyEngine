@@ -1,7 +1,7 @@
 import { Rapier } from '../physics/Rapier'
 
 function bodyTypes() {
-    const rapier = Rapier.getRapier();
+    const rapier = Rapier.get();
 
         return {
             fixed: rapier.RigidBodyDesc.fixed(),
@@ -12,7 +12,7 @@ function bodyTypes() {
     }
 
 export function createBoxBody(world, {width = 1, height = 1, depth = 1, colliderType = "dynamic"}){
-    const rapier = Rapier.getRapier();
+    const rapier = Rapier.get();
 
     const bodyDesc = bodyTypes()[colliderType];
     const body = world.createRigidBody(bodyDesc);
@@ -24,7 +24,7 @@ export function createBoxBody(world, {width = 1, height = 1, depth = 1, collider
 }
 
 export function createSphereBody(world, {radius = 1, colliderType = "dynamic"}){
-    const rapier = Rapier.getRapier();
+    const rapier = Rapier.get();
 
     const bodyDesc = bodyTypes()[colliderType];
     const body = world.createRigidBody(bodyDesc);
@@ -36,7 +36,7 @@ export function createSphereBody(world, {radius = 1, colliderType = "dynamic"}){
 }
 
 export function createCapsuleBody(world, {radius = 1, halfHeight = 1, colliderType = "dynamic"}){
-    const rapier = Rapier.getRapier();
+    const rapier = Rapier.get();
 
     const bodyDesc = bodyTypes()[colliderType];
     const body = world.createRigidBody(bodyDesc);
@@ -48,7 +48,7 @@ export function createCapsuleBody(world, {radius = 1, halfHeight = 1, colliderTy
 }
 
 export function createCylinderBody(world, {radius = 0.5, halfHeight = 1, colliderType = "dynamic"}){
-    const rapier = Rapier.getRapier();
+    const rapier = Rapier.get();
 
     const bodyDesc = bodyTypes()[colliderType];
     const body = world.createRigidBody(bodyDesc);

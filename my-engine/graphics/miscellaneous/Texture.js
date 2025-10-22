@@ -19,7 +19,7 @@ export class Texture{
         });
 
         if(text){
-            throw new Error(`The path "${path}" was already loaded!`);
+            throw new Error(`The texture path "${path}" was already loaded!`);
         }
     }
 
@@ -38,7 +38,9 @@ export class Texture{
         Texture.#checkPath(path);
 
         const loader = new THREE.TextureLoader();
-        const texture = await loader.loadAsync(path);
+        //const url = new URL(path, import.meta.url);
+        const url = `${import.meta.env.BASE_URL}/` + path;
+        const texture = await loader.loadAsync(url);
         texture.colorSpace = THREE.SRGBColorSpace;
 
         const newTexture = new Texture(id, path, texture);
@@ -51,7 +53,7 @@ export class Texture{
         });
 
         if(!text){
-            throw new Error(`Identifier "${id}" does not exists!`);
+            throw new Error(`Texture identifier "${id}" does not exists!`);
         }
 
         return text.getTexture().clone();

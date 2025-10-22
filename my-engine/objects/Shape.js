@@ -56,6 +56,14 @@ export class Shape{
         return this._Mesh;
     }
 
+    getGeometry(){
+        return this._Geometry;
+    }
+
+    getMaterial(){
+        return this._Material;
+    }
+
     // Métodos relacionados á física (Body, Rapier)
     setPosition(a, b, c){
         let obj = a;
