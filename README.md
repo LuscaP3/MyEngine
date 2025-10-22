@@ -39,7 +39,7 @@
 <br>
 
 <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-<img src="./print1.png" style="width:80vh;">
+<img src="./imgs/print1.png" style="width:80vh;">
 <br>
-<img src="./print2.png" style="width:80vh;">
+<img src="./imgs/print2.png" style="width:80vh;">
 </div>
